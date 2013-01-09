@@ -1,4 +1,3 @@
-ABLVBPM
-=======
-
-ABLV BPM servera aplikācijas pieslēgums
+ABLV
+====
+ABLV aplikācija BPM procesu pārvaldīšanai.

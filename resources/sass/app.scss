@@ -1,0 +1,61 @@
+// Let's start with the basics
+$base-color: #201101;
+$base-gradient: 'glossy';
+$active-color: #F99D3B;
+
+// Lists
+$list-header-bg-color: #555;
+$list-bg-color: #1E0000;
+
+@import 'sencha-touch/default/all';
+
+@include sencha-panel;
+@include sencha-buttons;
+@include sencha-sheet;
+@include sencha-picker;
+@include sencha-tabs;
+@include sencha-toolbar;
+@include sencha-toolbar-forms;
+@include sencha-carousel;
+@include sencha-indexbar;
+@include sencha-list;
+@include sencha-list-paging;
+@include sencha-list-pullrefresh;
+@include sencha-layout;
+@include sencha-form;
+@include sencha-msgbox;
+@include sencha-loading-spinner;
+@include sencha-draw;
+@include sencha-charts;
+
+@include sencha-toolbar-ui('black', #000000,'glossy');
+
+//augšā pa vidu virsraksti
+.x-title .x-innerhtml {
+	color: $active-color;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 1);
+	font-weight: normal;
+	font-family: 'Verdana';
+}  
+
+.x-list-normal .x-list-header {
+	color: $active-color;
+}
+
+//lista pogu backgroundi
+.custom-list-center .x-list-item{
+	background-color: #ffffff;
+}
+
+.custom-list-left .x-list-item{
+	background-color: #ffffff;
+}
+
+//centra fons
+.custom-list-center {
+	background-color: #F0EFEE;
+	background-image:url('ablv.png');
+	background-repeat:no-repeat;
+	background-position:center;
+	background-size:40%;
+}
