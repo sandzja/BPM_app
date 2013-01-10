@@ -188,7 +188,7 @@ Ext.define('ABLV.controller.Main', {
     },
 
     onCompleteTaskBtnTap: function(button, e, options) {
-        var form = this.getTaskdetails();
+        /*var form = this.getTaskdetails();
         var errors = form.getValidationErrors();
         
         var values = form.getValues();
@@ -241,10 +241,10 @@ Ext.define('ABLV.controller.Main', {
       // Ext.StoreMgr.get('Tasks').sync();
 
         
-    },
+    */},
 
     onCancelTaskBtnTap: function(button, e, options) {
-        var form = this.getTaskdetails();
+        /*var form = this.getTaskdetails();
         var errors = form.getValidationErrors();
         
         var values = form.getValues();
@@ -294,6 +294,6 @@ Ext.define('ABLV.controller.Main', {
         Ext.Viewport.animateActiveItem(main, {type:'slide', direction:'left'});
   //      console.log('BackItemTap funkcija');   
         
-    }, 
+    */}, 
 
 });                    
