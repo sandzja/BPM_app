@@ -6,13 +6,13 @@ Ext.define('ABLV.model.Task', {
 		
 		fields: [
 		{name: 'id'},
-		{name: 'Izpilditaja ID (lietotajs)'},
-		{name: 'Dokumenta numurs'},
-		{name: 'Procesa nosaukums'},
-		{name: 'Uzdevuma tips'},
-		{name: 'Uzdevuma apraksts'},
+		{name: 'IzpilditajaID'},
+		{name: 'DokumentaNumurs'},
+		{name: 'ProcesaNosaukums'},
+		{name: 'UzdevumaTips'},
+		{name: 'uzdevumaApraksts'},
 		{name: 'Izveidots', type: 'date', dateFormat: 'Y-m-d'},
-		{name: 'Procesa statuss'},
+		{name: 'ProcesaStatuss'},
 		{name: 'komentars'},
 		{name: 'izpildesDatums', type: 'date', dateFormat: 'Y-m-d'}
 

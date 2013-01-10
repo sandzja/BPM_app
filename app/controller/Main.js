@@ -66,7 +66,7 @@ Ext.define('ABLV.controller.Main', {
                           else {
                               //  Ext.StoreMgr.get('Tasks').load();
                                 Ext.StoreMgr.get('Tasks').clearFilter();
-                                Ext.StoreMgr.get('Tasks').filter('uzdevumaTips', item.title);
+                                Ext.StoreMgr.get('Tasks').filter('UzdevumaTips', item.title);
                                 
                           }
 

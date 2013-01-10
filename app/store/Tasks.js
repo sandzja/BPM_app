@@ -10,11 +10,11 @@ Ext.define('ABLV.store.Tasks', {
 		storeid: 'Tasks',
 		model: 'ABLV.model.Task',
 		grouper: function(record) {
-			return record.get('uzdevumaTips');
+			return record.get('UzdevumaTips');
 			},
 
 		/*!!šobrīd nestrādā!!*/
-		sorter: ('izpildesTermins'),
+		//sorter: ('izpildesTermins'),
 	/*	data:[
 				//Canadian Provinces
 				{id:1, lietotajs: 'Sandis', uzdevumaTips:'Atskaites sagatavošana', uzdevumaID:111, uzdevumaApraksts: 'Un šeit ir apraksts', izpildesTermins: '02/02/2013', uzdevumaStatuss: 'Procesā', komentars: 'Un šeit mēs rakstām komentāru', FaktiskaisIzpildesDatums: '2013.02.02'},
@@ -39,7 +39,7 @@ Ext.define('ABLV.store.Tasks', {
 
 		proxy: {
             type: 'jsonp',
-            url : 'http://62.85.27.32/abdemo/index.php/welcome/getFullDemoDataJSONp',
+            url : 'http://62.85.27.32/abdemo/index.php/welcome/getTestJSONp',
             reader: {
                 type: 'json',
                 callbackKey: 'callback'

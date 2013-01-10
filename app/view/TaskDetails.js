@@ -49,39 +49,39 @@ Ext.define('ABLV.view.TaskDetails', {
                     {
                         xtype: 'textfield',
                         //disabled: true,
-                        itemId: 'Dokumenta numurs',
+                        itemId: 'DokumentaNumurs',
                         clearIcon: false,
                         label: 'Dokumenta numurs',
-                        name: 'Dokumenta numurs',
+                        name: 'DokumentaNumurs',
                         readOnly: true,
                         hidden: false
                     },
                     {
                         xtype: 'textfield',
                         //disabled: true,
-                        itemId: 'Procesa nosaukums',
+                        itemId: 'ProcesaNosaukums',
                         clearIcon: false,
                         label: 'Procesa nosaukums:',
-                        name: 'Procesa nosaukums',
+                        name: 'ProcesaNosaukums',
                         placeHolder: 'Procesa nosaukums nav norādīts',
                         readOnly: true
                     },
                     {
                         xtype: 'textfield',
                         //disabled: true,
-                        itemId: 'Uzdevuma tips',
+                        itemId: 'UzdevumaTips',
                         clearIcon: false,
                         label: 'Uzdevuma tips:',
-                        name: 'Uzdevuma tips',
+                        name: 'UzdevumaTips',
                         placeHolder: 'Uzdevuma tips nav norādīts',
                         readOnly: true
                     },{
                         xtype: 'textfield',
                         //disabled: true,
-                        itemId: 'Uzdevuma apraksts',
+                        itemId: 'UzdevumaApraksts',
                         clearIcon: false,
                         label: 'Uzdevuma apraksts:',
-                        name: 'Uzdevuma apraksts',
+                        name: 'UzdevumaApraksts',
                         placeHolder: 'Uzdevuma apraksts nav norādīts',
                         readOnly: true
                     },
@@ -149,9 +149,9 @@ Ext.define('ABLV.view.TaskDetails', {
                     },
                     {//Pietrūkst!!
                             xtype: 'textfield',
-                            name: 'Procesa statuss',
+                            name: 'ProcesaStatuss',
                             label: 'Uzdevuma statuss:',
-                            itemId: 'Procesa statuss',
+                            itemId: 'ProcesaStatuss',
                             //disabled: true,
                             clearIcon: true,
                             readOnly: true,
@@ -209,11 +209,11 @@ Ext.define('ABLV.view.TaskDetails', {
 
     setRecord: function(record) {
         this.callParent(arguments);
-         var date = record.data.izpildesTermins;
+    //     var date = record.data.izpildesTermins;
          //console.log(record);
         //console.log(Ext.Date.format(date, 'j/d/Y'));
        // record.data.izpildesTermins = Ext.Date.format(date, 'j/d/Y');
-        var izpdate = this.down('#izpildesTermins').setValue(Ext.Date.format(date, 'd/m/Y'));
+   //     var izpdate = this.down('#izpildesTermins').setValue(Ext.Date.format(date, 'd/m/Y'));
         //console.log(izpdate);
       //  record.set("izpildesTermins", Ext.Date.format(date, 'd/m/Y'));
 /*

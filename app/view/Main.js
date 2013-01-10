@@ -112,7 +112,7 @@ Ext.define("ABLV.view.Main", {
             },
         
             {//Pārējās kategorijas - jābūt dinamiskam listam
-            title: 'Atbildes nosūtīšana',
+            title: 'Atbildes nosutisana',
             group: 'Uzdevumu tipi',
             slideButton: {
                 selector: 'toolbar',
@@ -134,7 +134,7 @@ Ext.define("ABLV.view.Main", {
             },
             
             {//Nākošā apakškategorija
-            title: 'Atskaites sagatavošana',
+            title: 'Atskaites sagatavosana',
             group: 'Uzdevumu tipi',
             slideButton: {
                 selector: 'toolbar',
@@ -200,7 +200,7 @@ Ext.define("ABLV.view.Main", {
             },
 
             {//Nākošā apakškategorija
-            title: 'Klienta informēšana',
+            title: 'Klienta informesana',
             group: 'Uzdevumu tipi',
             slideButton: {
                 selector: 'toolbar',
@@ -222,7 +222,7 @@ Ext.define("ABLV.view.Main", {
             },
 
             {//Nākošā apakškategorija
-            title: 'Vēstules sagatavošana',
+            title: 'Vestules sagatavosana',
             group: 'Uzdevumu tipi',
             slideButton: {
                 selector: 'toolbar',
@@ -266,7 +266,7 @@ Ext.define("ABLV.view.Main", {
             },
 
             {//Nākošā apakškategorija
-            title: 'Rīkojuma sagatavošana',
+            title: 'Rikojuma sagatavosana',
             group: 'Uzdevumu tipi',
             slideButton: {
                 selector: 'toolbar',
