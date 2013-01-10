@@ -85,8 +85,8 @@ Ext.define('ABLV.view.Login', {
         var task = Ext.create('Ext.util.DelayedTask', function () {
             label.setHtml('');
             me.fireEvent('signInCommand', me, username, password);
-            usernameField.setValue('');
-            passwordField.setValue('');
+        //    usernameField.setValue('');
+       //     passwordField.setValue('');
             passwordField.blur();
             usernameField.blur();
         });

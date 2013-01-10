@@ -52,6 +52,7 @@ Ext.define('ABLV.controller.Login', {
         Ext.data.JsonP.request({
             type: 'jsonp',
                 url: 'http://62.85.27.32/abdemo/index.php/welcome/login',
+                
                 params: {
                 username: username,
                 password: password
@@ -61,7 +62,8 @@ Ext.define('ABLV.controller.Login', {
                 callback: function(success, result) {
                     //console.log(success);
                    // console.log(result);
-                    if (result.sessionToken == "slepenaisLogin") {
+
+                   if (result.sessionToken == "slepenaisLogin") {
                     result = result.sessionToken;
                     console.log(result);
                     console.log('Veiksmīgs logins');
@@ -73,26 +75,10 @@ Ext.define('ABLV.controller.Login', {
                     }
                 },
 
-            /*    //success un failure apraksts
-            success: function (response) {
-                var loginResponse = Ext.JSON.decode(response.responseText);
-
-                if (loginResponse.success === "true") {
-                    // The server will send a token that can be used throughout the app to confirm that the user is authenticated.
-                    me.sessionToken = loginResponse.sessionToken;
-                    me.signInSuccess();     //Just simulating success.
-
-                } else {
-                    me.singInFailure(loginResponse.message);
-                }
-            },
-
-            failure: function (response) {
-                me.sessionToken = null;
-                me.singInFailure('Neizdevās. Mēģiniet vēlreiz.');
-            }*/
+  
 
         });
+
 
         /*Ext.data.JsonP.request({
             url: 'http://10.20.30.69:8080/abdemo/index.php/welcome/login',

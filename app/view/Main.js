@@ -70,7 +70,7 @@ Ext.define("ABLV.view.Main", {
         
         groups: {
             'Visi uzdevumi': 1,
-            'Kategorijas': 2
+            'Uzdevumu tipi': 2
         },
         
         /**
@@ -113,7 +113,7 @@ Ext.define("ABLV.view.Main", {
         
             {//Pārējās kategorijas - jābūt dinamiskam listam
             title: 'Atbildes nosūtīšana',
-            group: 'Kategorijas',
+            group: 'Uzdevumu tipi',
             slideButton: {
                 selector: 'toolbar',
                 iconMask: true,
@@ -135,7 +135,7 @@ Ext.define("ABLV.view.Main", {
             
             {//Nākošā apakškategorija
             title: 'Atskaites sagatavošana',
-            group: 'Kategorijas',
+            group: 'Uzdevumu tipi',
             slideButton: {
                 selector: 'toolbar',
                 iconMask: true,
@@ -157,7 +157,7 @@ Ext.define("ABLV.view.Main", {
 
             {//Nākošā apakškategorija
             title: 'Eksperta atzinums',
-            group: 'Kategorijas',
+            group: 'Uzdevumu tipi',
             slideButton: {
                 selector: 'toolbar',
                 iconMask: true,
@@ -179,7 +179,7 @@ Ext.define("ABLV.view.Main", {
 
             {//Nākošā apakškategorija
             title: 'Jurista atzinums',
-            group: 'Kategorijas',
+            group: 'Uzdevumu tipi',
             slideButton: {
                 selector: 'toolbar',
                 iconMask: true,
@@ -201,7 +201,7 @@ Ext.define("ABLV.view.Main", {
 
             {//Nākošā apakškategorija
             title: 'Klienta informēšana',
-            group: 'Kategorijas',
+            group: 'Uzdevumu tipi',
             slideButton: {
                 selector: 'toolbar',
                 iconMask: true,
@@ -223,7 +223,7 @@ Ext.define("ABLV.view.Main", {
 
             {//Nākošā apakškategorija
             title: 'Vēstules sagatavošana',
-            group: 'Kategorijas',
+            group: 'Uzdevumu tipi',
             slideButton: {
                 selector: 'toolbar',
                 iconMask: true,
@@ -245,7 +245,7 @@ Ext.define("ABLV.view.Main", {
 
             {//Nākošā apakškategorija
             title: 'Paskaidrojums',
-            group: 'Kategorijas',
+            group: 'Uzdevumu tipi',
             slideButton: {
                 selector: 'toolbar',
                 iconMask: true,
@@ -267,7 +267,7 @@ Ext.define("ABLV.view.Main", {
 
             {//Nākošā apakškategorija
             title: 'Rīkojuma sagatavošana',
-            group: 'Kategorijas',
+            group: 'Uzdevumu tipi',
             slideButton: {
                 selector: 'toolbar',
                 iconMask: true,
@@ -287,7 +287,7 @@ Ext.define("ABLV.view.Main", {
             }]
             },
 
-            {//OK - Nākošā apakškategorija
+            /*{//OK - Nākošā apakškategorija
             title: 'Cits',
             group: 'Kategorijas',
             slideButton: {
@@ -309,7 +309,8 @@ Ext.define("ABLV.view.Main", {
             }]
 
 
-        }] //Beidzās apakškategorijas
+        }*/
+        ] //Beidzās apakškategorijas
     
     } //beidzās "config"
 

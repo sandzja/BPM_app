@@ -2,7 +2,7 @@ Ext.define('ABLV.view.TaskDetails', {
     extend: 'Ext.form.Panel',
     xtype: 'taskdetails',
     alias: 'widget.taskdetails',
-    
+     requires: 'Ext.DateExtras',
 
     
     config: {
@@ -18,7 +18,7 @@ Ext.define('ABLV.view.TaskDetails', {
                     {
                         xtype: 'button',
                         itemId: 'infoBackBtn',
-                        ui: 'back',
+                        ui: 'action',
                         text: 'Back'
                     },
                     {
@@ -78,10 +78,12 @@ Ext.define('ABLV.view.TaskDetails', {
                     {   
                         xtype: 'textfield',
                         //disabled: true,
-                        itemid: 'izpildesDatums',
+                        itemid: 'izpildesTermins',
                         clearIcon: false,
                         label: 'Uzdevums izveidots:',
-                        name: 'izpildesDatums',
+                        name: 'izpildesTermins',
+                        id: 'izpildesTermins',
+                        
                         //placeHolder: 'Izpildes termiņš nav norādīts',
                         readOnly: true
                     },
@@ -109,12 +111,15 @@ Ext.define('ABLV.view.TaskDetails', {
                     {//Pietrūkst!!
 
                             xtype: 'datepickerfield',
-                            itemid: 'FaktiskaisIzpildesDatums',
+                            itemid: 'izpildesDatums',
+                            id: 'izpildesDatums',
                             clearIcon: false,
                             label: 'Faktiskais izpildes datums:',
-                            name: 'FaktiskaisIzpildesDatums',
-                            value : { day: new Date().getDate(), month: (new Date().getMonth()+1), year : new Date().getFullYear()},
+                            name: 'izpildesDatums',
+                         //  slotOrder: ['day', 'month', 'year'], 
+                        // value: new Date(),
                             readOnly: false,
+                           dateFormat: 'd/m/Y',
                             picker: {
                                     yearFrom: 2012,
                                     yearTo: 2015
@@ -194,9 +199,18 @@ Ext.define('ABLV.view.TaskDetails', {
 
     setRecord: function(record) {
         this.callParent(arguments);
-        /*if (record) {
-            this.child('contactpic').setData(record.data);
-        }*/
+         var date = record.data.izpildesTermins;
+         //console.log(record);
+        //console.log(Ext.Date.format(date, 'j/d/Y'));
+       // record.data.izpildesTermins = Ext.Date.format(date, 'j/d/Y');
+        var izpdate = this.down('#izpildesTermins').setValue(Ext.Date.format(date, 'd/m/Y'));
+        //console.log(izpdate);
+      //  record.set("izpildesTermins", Ext.Date.format(date, 'd/m/Y'));
+/*
+        var todaydate = new Date();
+         var changedTodaydate = this.down('#izpildesDatums').setValue(Ext.Date.format(todaydate, 'd/m/Y'));
+       console.log(changedTodaydate);*/
+     
     }
 
 });

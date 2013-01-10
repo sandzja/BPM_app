@@ -7,18 +7,18 @@ Ext.define('ABLV.model.Task', {
 		fields: [
 		{name: 'id', type: 'int'},
 		{name: 'lietotajs'},
-		{name: 'uzdevumaID', type: 'int'},
+		{name: 'uzdevumaID'},
 		//{name: 'uzdevumaNosaukums'},
 		{name: 'uzdevumaTips'},
 		{name: 'uzdevumaApraksts'},
-		{name: 'izpildesTermins', type: 'date'},
+		{name: 'izpildesTermins', type: 'date', dateFormat: 'Y-m-d'},
 		{name: 'uzdevumaStatuss'},
 		{name: 'komentars'},
-		{name: 'FaktiskaisIzpildesDatums'}
+		{name: 'izpildesDatums', type: 'date', dateFormat: 'Y-m-d'}
 
 		]
+
 	},
-	
 	/* šis nepieciešams, lai nomainītu augšējo titlu dinamiski*/
 	fullName: function() {
 		var d = this.data,
