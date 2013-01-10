@@ -41,12 +41,12 @@ launch: function() {
         Ext.fly('appLoadingIndicator').destroy();
 	
         // Initialize the main view
-        Ext.Viewport.add(Ext.create('ABLV.view.Galvenais'));
+        //Ext.Viewport.add(Ext.create('ABLV.view.Galvenais'));
 
-/*        Ext.Viewport.add([
+        Ext.Viewport.add([
             { xtype: 'loginview' },
             { xtype: 'galvenais' }
-        ]);*/
+        ]);
 
     },
 
