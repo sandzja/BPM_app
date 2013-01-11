@@ -51,29 +51,75 @@ Ext.define('ABLV.controller.Login', {
 
         Ext.data.JsonP.request({
             type: 'jsonp',
-                url: 'http://62.85.27.32/abdemo/index.php/welcome/login',
+                url: 'http://10.20.30.77:8080/axis2/services/UserProcesses/authenticate?response=application/json',
                 
                 params: {
-                username: username,
-                password: password
+                name: "example5",//username,
+                passwd: "d3m0sys"//password
                 },
                 callbackKey: 'callback',
                 scriptTag: true, // Use script tag transport
                 callback: function(success, result) {
                     //console.log(success);
                    // console.log(result);
+                //alert("DEB: accToken="+result.return);
+                   
+                if (result.return != "?") {
+                        result = result.return;
+                        //alert("Veiksmīgs logins!");
+                        console.log(result);
+                        console.log('Veiksmīgs logins');
+                        me.sessionToken = result;
+                        me.signInSuccess();     //Just simulating success.
+                        //vajag palaist getUserId 
+                        Ext.data.JsonP.request({
+                            type: 'jsonp',
+                                url: 'http://10.20.30.77:8080/axis2/services/UserProcesses/getUserId?response=application/json',
+                                params: {
+                                    accToken: me.sessionToken
+                                },
+                                callbackKey: 'callback',
+                                scriptTag: true, // Use script tag transport
+                                callback: function(success, result) {
+                                    //alert("Cool! id="+result.return);
+                                    me.bpmUserId=result.return;
+                                    // -----------------------------------------
+                                    Ext.data.JsonP.request({
+                                        type: 'jsonp',
+                                            url: 'http://10.20.30.77:8080/axis2/services/UserProcesses/getUserProcesses?response=application/json',
+                                            params: {
+                                                accToken: me.sessionToken,
+                                                userId: me.bpmUserId
+                                            },
+                                            callbackKey: 'callback',
+                                            scriptTag: true, // Use script tag transport
+                                            callback: function(success, result) {
+                                                var arrayOfProcesses = me.processesList=result.return;
+                                                alert("Cool! processList="+arrayOfProcesses.length+" processes");
+                                                //var i=0;
+                                                for(var i=0;i<arrayOfProcesses.length;i++) {
+                                                    var processProperties = arrayOfProcesses[i].array;
+                                                    var process;
+                                                    var debMsg = "";
+                                                    for(var j=0;j<processProperties.length;j++) {
+                                                        debMsg = debMsg+"\n"+processProperties[j]+"="+
+                                                        processProperties[j+1];
+                                                        //process.processProperties[j]=processProperties[j+1];
+                                                        j++;
+                                                    }
+                                                    //alert("Process info:\n"+debMsg);
+                                                    //alert("Process object id="+process."id");
+                                                }
 
-                   if (result.sessionToken == "slepenaisLogin") {
-                    result = result.sessionToken;
-                    console.log(result);
-                    console.log('Veiksmīgs logins');
-                    me.sessionToken = result;
-                    me.signInSuccess();     //Just simulating success.
-
-                    } else {
-                        me.singInFailure('Neizdevās. Mēģiniet vēlreiz.');
-                    }
-                },
+                                            },
+                                    });
+                                    // ---------------------------------------- 
+                                },
+                        });
+                } else {
+                    me.singInFailure('Neizdevās. Mēģiniet vēlreiz.');
+                }
+            },
 
   
 
