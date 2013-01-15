@@ -38,13 +38,13 @@ Ext.define('ABLV.store.Tasks', {
         }*/
 
 		proxy: {
-            type: 'jsonp',
+            /*type: 'jsonp',
             url : 'http://62.85.27.32/abdemo/index.php/welcome/getTestJSONp',
             reader: {
                 type: 'json',
                 callbackKey: 'callback'
 
-            }
+            }*/
         }
 	}
 	

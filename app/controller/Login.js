@@ -51,11 +51,12 @@ Ext.define('ABLV.controller.Login', {
 
         Ext.data.JsonP.request({
             type: 'jsonp',
-                url: 'http://10.20.30.77:8080/axis2/services/UserProcesses/authenticate?response=application/json',
+                url: 'http://10.20.30.79:8080/axis2/services/BusinessProcesses/authenticate?response=application/json',
                 
                 params: {
-                name: "example5",//username,
-                passwd: "d3m0sys"//password
+                    user: "example5",//username,
+                    domain: "otds.admin",//username,
+                    password: "d3m0sys"//password
                 },
                 callbackKey: 'callback',
                 scriptTag: true, // Use script tag transport
@@ -64,6 +65,15 @@ Ext.define('ABLV.controller.Login', {
                    // console.log(result);
                 //alert("DEB: accToken="+result.return);
                    
+               /* if (result.errcode == 0) {
+                    me.processes=result.processes;
+                    var process = me.processes[index];
+                    process.id...
+                     
+                } else {
+                    alert("SYSERR: "+result.errmsg);
+                }*/
+
                 if (result.return != "?") {
                         result = result.return;
                         //alert("Veiksmīgs logins!");
@@ -74,7 +84,7 @@ Ext.define('ABLV.controller.Login', {
                         //vajag palaist getUserId 
                         Ext.data.JsonP.request({
                             type: 'jsonp',
-                                url: 'http://10.20.30.77:8080/axis2/services/UserProcesses/getUserId?response=application/json',
+                                url: 'http://10.20.30.79:8080/axis2/services/BusinessProcesses/getUserId?response=application/json',
                                 params: {
                                     accToken: me.sessionToken
                                 },
@@ -86,7 +96,7 @@ Ext.define('ABLV.controller.Login', {
                                     // -----------------------------------------
                                     Ext.data.JsonP.request({
                                         type: 'jsonp',
-                                            url: 'http://10.20.30.77:8080/axis2/services/UserProcesses/getUserProcesses?response=application/json',
+                                            url: 'http://10.20.30.79:8080/axis2/services/BusinessProcesses/getUserProcesses?response=application/json',
                                             params: {
                                                 accToken: me.sessionToken,
                                                 userId: me.bpmUserId
